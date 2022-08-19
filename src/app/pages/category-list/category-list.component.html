@@ -1,0 +1,31 @@
+<app-toolbar></app-toolbar>
+
+<ion-content class="ion-padding-horizontal" fullscreen>
+    <h1>Categories</h1>
+
+    <ion-list *ngIf="categories.length; else missing">
+        <ion-item *ngFor="let category of categories">
+            <ion-label>
+                <h2>{{category.name}}</h2>
+            </ion-label>
+
+            <ion-buttons slot="end">
+                <ion-button shape="circle" (click)="viewOptions(category)">
+                    <ion-icon name="ellipsis-vertical"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-item>
+    </ion-list>
+
+    <ng-template #missing>
+        <div class="message__container">
+            <h4>No categories found</h4>
+        </div>
+    </ng-template>
+
+    <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+        <ion-fab-button routerLink="/categories/new" color="secondary">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,32 @@
+<app-toolbar></app-toolbar>
+
+<ion-content class="ion-padding-horizontal" fullscreen>
+    <div class="container">
+        <form #form="ngForm" (ngSubmit)="form.valid && onSubmit()">
+            <h3 class="ion-margin-end">{{action | titlecase}} a category</h3>
+
+            <ion-list>
+                <ion-item>
+                    <ion-label position="floating">Category Name</ion-label>
+                    <ion-input type="text" name="category" placeholder="eg. Protein" [(ngModel)]="category.name"
+                        required>
+                    </ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Description</ion-label>
+                    <ion-textarea type="text" name="description" placeholder="" [(ngModel)]="category.description">
+                    </ion-textarea>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>
+                        <ion-button type="submit" expand="block" color="success" size="default">
+                            <ion-icon name="checkmark"></ion-icon>
+                            <ion-label>Done</ion-label>
+                        </ion-button>
+                    </ion-label>
+                </ion-item>
+            </ion-list>
+        </form>
+    </div>
+</ion-content>
