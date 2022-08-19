@@ -8,7 +8,7 @@
             <ion-checkbox slot="start" [(ngModel)]="item.bought"></ion-checkbox>
 
             <ion-label>
-                <h2>{{item.name}} <span style="color:aqua">({{item.amount | number}})</span></h2>
+                <h2>{{item.name}} <span style="color:var(--ion-color-primary)">({{item.amount | number}})</span></h2>
                 <p>{{item.price | currency}}</p>
             </ion-label>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 import { Item } from 'src/app/models/item';
@@ -9,12 +9,12 @@ import { ItemService } from 'src/app/services/item.service';
     templateUrl: './item-list.component.html',
     styleUrls: ['./item-list.component.scss'],
 })
-export class ItemListComponent implements OnInit {
+export class ItemListComponent {
     items: Item[] = [];
 
     constructor(private itemService: ItemService, private actionSheetController: ActionSheetController, private router: Router) { }
 
-    ngOnInit() {
+    ionViewWillEnter() {
         this.getAllItems();
     }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 import { Category } from 'src/app/models/category';
@@ -9,12 +9,12 @@ import { CategoryService } from 'src/app/services/category.service';
     templateUrl: './category-list.component.html',
     styleUrls: ['./category-list.component.scss'],
 })
-export class CategoryListComponent implements OnInit {
+export class CategoryListComponent {
     categories: Category[] = [];
 
     constructor(private categoryService: CategoryService, private actionSheetController: ActionSheetController, private router: Router) { }
 
-    ngOnInit() {
+    ionViewWillEnter() {
         this.getAllCategories();
     }
 

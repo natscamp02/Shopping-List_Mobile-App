@@ -27,13 +27,13 @@ export class ItemFormComponent implements OnInit {
     onSubmit(): void {
         if (this.action === 'add')
             this.itemService.create(this.item).subscribe((res) => {
-                if (res) this.navController.navigateRoot(['/item-list']);
+                if (res) this.router.navigateByUrl('/item-list');
+                // if (res) this.navController.navigateRoot(['/item-list']);
             });
 
         if (this.action === 'edit')
             this.itemService.update(this.item.id, this.item).subscribe((res) => {
-                if (res) this.navController.navigateRoot(['/item-list']);
-                // if (res) this.router.navigateByUrl('/item-list', { replaceUrl: true });
+                if (res) this.router.navigateByUrl('/item-list');
             });
     }
 
